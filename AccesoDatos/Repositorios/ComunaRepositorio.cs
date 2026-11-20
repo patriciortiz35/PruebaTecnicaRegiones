@@ -17,21 +17,21 @@ public class ComunaRepositorio(IConfiguration configuration) : IComunaRepositori
     public async Task<IEnumerable<Comuna>> ObtenerComunasAsync(int idRegion)
     {
         using var conexion = CrearConexion;
-        return await conexion.QueryAsync<Comuna>("usp_PTR_Comuna_ObtenerPorRegion",
+        return await conexion.QueryAsync<Comuna>("usp_PVT_Comuna_ObtenerPorRegion",
             new { IdRegion = idRegion }, commandType: CommandType.StoredProcedure);
     }
 
     public async Task<Comuna?> ObtenerComunaAsync(int idRegion, int idComuna)
     {
         using var conexion = CrearConexion;
-        return await conexion.QueryFirstOrDefaultAsync<Comuna>("usp_PTR_Comuna_ObtenerPorId",
+        return await conexion.QueryFirstOrDefaultAsync<Comuna>("usp_PVT_Comuna_ObtenerPorId",
             new { IdRegion = idRegion, IdComuna = idComuna }, commandType: CommandType.StoredProcedure);
     }
 
     public async Task<bool> ActualizarComunaAsync(int idRegion, int idComuna, string comuna, decimal superficie, int poblacion)
     {
         using var conexion = CrearConexion;
-        var resultado = await conexion.QuerySingleAsync<int>("usp_PTR_Comuna_Actualizar",
+        var resultado = await conexion.QuerySingleAsync<int>("usp_PVT_Comuna_Actualizar",
             new { IdRegion = idRegion, IdComuna = idComuna, Comuna = comuna, Superficie = superficie, Poblacion = poblacion },
             commandType: CommandType.StoredProcedure);
         return resultado == 1;

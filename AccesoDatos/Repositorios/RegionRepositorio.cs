@@ -17,13 +17,13 @@ public class RegionRepositorio(IConfiguration configuration) : IRegionRepositori
     public async Task<IEnumerable<Region>> ObtenerRegionesAsync()
     {
         using var conexion = CrearConexion;
-        return await conexion.QueryAsync<Region>("usp_PTR_Region_ObtenerTodos", commandType: CommandType.StoredProcedure);
+        return await conexion.QueryAsync<Region>("usp_PVT_Region_ObtenerTodos", commandType: CommandType.StoredProcedure);
     }
 
     public async Task<Region?> ObtenerRegionAsync(int idRegion)
     {
         using var conexion = CrearConexion;
-        return await conexion.QueryFirstOrDefaultAsync<Region>("usp_PTR_Region_ObtenerPorId",
+        return await conexion.QueryFirstOrDefaultAsync<Region>("usp_PVT_Region_ObtenerPorId",
             new { IdRegion = idRegion }, commandType: CommandType.StoredProcedure);
     }
 

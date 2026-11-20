@@ -1,4 +1,4 @@
-USE PruebaTecnicaRegiones
+USE PruebaTecnicaValueTech
 GO
 PRINT 'CARGANDO DATOS REGIONES'
 INSERT INTO dbo.Region (Region)

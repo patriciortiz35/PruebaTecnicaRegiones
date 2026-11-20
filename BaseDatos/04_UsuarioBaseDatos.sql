@@ -7,11 +7,11 @@ WITH
     PASSWORD = 'Regiones.Api#2026_Segura!',
     CHECK_POLICY = ON,
     CHECK_EXPIRATION = OFF,
-    DEFAULT_DATABASE = [PruebaTecnicaRegiones];
+    DEFAULT_DATABASE = [PruebaTecnicaValueTech];
 GO
 
 -- 2. Crear usuario dentro de la base de datos
-USE [PruebaTecnicaRegiones];
+USE [PruebaTecnicaValueTech];
 GO
 
 CREATE USER [usr_api_regiones]

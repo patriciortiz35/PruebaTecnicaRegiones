@@ -1,18 +1,18 @@
-USE PruebaTecnicaRegiones
+USE PruebaTecnicaValueTech
 GO
 /**************************************************************
 
-Nombre: usp_PTR_Region_ObtenerTodos
+Nombre: usp_PVT_Region_ObtenerTodos
 Fecha: 18-11-2026
 Creado por: Patricio Ortíz
 Proyecto: Pruebas Técnicas Regiones (Valuetech)
 Descripción: Obtiene Listado completo de las regiones 
-Ejecución: EXEC usp_PTR_Region_ObtenerTodos
+Ejecución: EXEC usp_PVT_Region_ObtenerTodos
 @prm1,
 @prm2...
 
 ***************************************************************/
-CREATE OR ALTER PROCEDURE dbo.usp_PTR_Region_ObtenerTodos
+CREATE OR ALTER PROCEDURE dbo.usp_PVT_Region_ObtenerTodos
 AS
 BEGIN
     SET NOCOUNT ON
@@ -24,17 +24,17 @@ GO
 
 /**************************************************************
 
-Nombre: usp_PTR_Region_ObtenerPorId
+Nombre: usp_PVT_Region_ObtenerPorId
 Fecha: 18-11-2026
 Creado por: Patricio Ortíz
 Proyecto: Pruebas Técnicas Regiones (Valuetech)
 Descripción: Obtiene Información de 1 Región
-Ejecución: EXEC usp_PTR_Region_ObtenerPorId
+Ejecución: EXEC usp_PVT_Region_ObtenerPorId
 @prm1,
 @prm2...
 
 ***************************************************************/
-CREATE OR ALTER PROCEDURE dbo.usp_PTR_Region_ObtenerPorId
+CREATE OR ALTER PROCEDURE dbo.usp_PVT_Region_ObtenerPorId
     @IdRegion INT
 AS
 BEGIN
@@ -48,17 +48,17 @@ GO
 
 /**************************************************************
 
-Nombre: usp_PTR_Comuna_ObtenerPorRegion
+Nombre: usp_PVT_Comuna_ObtenerPorRegion
 Fecha: 18-11-2026
 Creado por: Patricio Ortíz
 Proyecto: Pruebas Técnicas Regiones (Valuetech)
 Descripción: Obtiene listado de Comunas de la región especificada 
-Ejecución: EXEC usp_PTR_Comuna_ObtenerPorRegion
+Ejecución: EXEC usp_PVT_Comuna_ObtenerPorRegion
 @prm1,
 @prm2...
 
 ***************************************************************/
-CREATE OR ALTER PROCEDURE dbo.usp_PTR_Comuna_ObtenerPorRegion
+CREATE OR ALTER PROCEDURE dbo.usp_PVT_Comuna_ObtenerPorRegion
     @IdRegion INT
 AS
 BEGIN
@@ -74,17 +74,17 @@ GO
 
 /**************************************************************
 
-Nombre: usp_PTR_Comuna_ObtenerPorId
+Nombre: usp_PVT_Comuna_ObtenerPorId
 Fecha: 18-11-2026
 Creado por: Patricio Ortíz
 Proyecto: Pruebas Técnicas Regiones (Valuetech)
 Descripción: Obtiene Información de 1 Comuna
-Ejecución: EXEC usp_PTR_Comuna_ObtenerPorId
+Ejecución: EXEC usp_PVT_Comuna_ObtenerPorId
 @prm1,
 @prm2...
 
 ***************************************************************/
-CREATE OR ALTER PROCEDURE dbo.usp_PTR_Comuna_ObtenerPorId
+CREATE OR ALTER PROCEDURE dbo.usp_PVT_Comuna_ObtenerPorId
     @IdRegion INT,
     @IdComuna INT
 AS
@@ -101,17 +101,17 @@ GO
 
 /**************************************************************
 
-Nombre: usp_PTR_Comuna_Actualizar
+Nombre: usp_PVT_Comuna_Actualizar
 Fecha: 18-11-2026
 Creado por: Patricio Ortíz
 Proyecto: Pruebas Técnicas Regiones (Valuetech)
 Descripción: Actualiza la información de la comuna dada
-Ejecución: EXEC usp_PTR_Comuna_Actualizar
+Ejecución: EXEC usp_PVT_Comuna_Actualizar
 @prm1,
 @prm2...
 
 ***************************************************************/
-CREATE OR ALTER PROCEDURE dbo.usp_PTR_Comuna_Actualizar
+CREATE OR ALTER PROCEDURE dbo.usp_PVT_Comuna_Actualizar
     @IdRegion INT,
     @IdComuna INT,
     @Comuna NVARCHAR(128),

@@ -1,9 +1,9 @@
 /* Ejecutar con permisos para crear base de datos. Compatible con SQL Server 2012+. */
 
-PRINT 'CREANDO BD PruebaTecnicaRegiones'
-IF DB_ID(N'PruebaTecnicaRegiones') IS NULL CREATE DATABASE PruebaTecnicaRegiones;
+PRINT 'CREANDO BD PruebaTecnicaValueTech'
+IF DB_ID(N'PruebaTecnicaValueTech') IS NULL CREATE DATABASE PruebaTecnicaValueTech;
 GO
-USE PruebaTecnicaRegiones;
+USE PruebaTecnicaValueTech;
 GO
 IF OBJECT_ID('dbo.Region', 'U') IS NULL
 BEGIN
