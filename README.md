@@ -13,7 +13,7 @@ Ejecutar en SQL Server Management Studio, en este orden:
 2. `BaseDatos/02_ProcedimientosAlmacenados.sql`
 3. `BaseDatos/03_CargaInicial.sql`
 4. `BaseDatos/04_UsuarioBaseDatos.sql`
-Los nombres de los procedimientos cumplen con la nomenclatura "usp_PTR.." donde PTR es Prueba Técnica Regiones
+Los nombres de los procedimientos cumplen con la nomenclatura "usp_PVT.." donde PVT es Prueba "ValueTech"
 
 La carga incluye las 16 regiones y comunas de demostración. Los datos son referenciales tal como se indicó el documento de requerimiento.
 
