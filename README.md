@@ -1,4 +1,4 @@
-# Prueba Técnica - Regiones y Comunas de Chile
+# Prueba Técnica TechValue- Regiones y Comunas de Chile
 
 Solución .NET 9 compuesta por tres proyectos: `AccesoDatos`, `ApiPvtRegiones` y `WebRegiones`.
 
