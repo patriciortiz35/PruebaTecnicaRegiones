@@ -2,4 +2,16 @@
   <PropertyGroup><TargetFramework>net9.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
   <ItemGroup><ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj" /></ItemGroup>
   <ItemGroup><PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" /></ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <!-- sólo incluir recurso para idioma español en publicación -->
+  <PropertyGroup>
+    <SatelliteResourceLanguages>es</SatelliteResourceLanguages>
+    <SignAssembly>False</SignAssembly>
+    <Authors>Patricio Ortíz</Authors>
+    <Company></Company>
+  </PropertyGroup>
 </Project>
