@@ -1,0 +1,6 @@
+@model IEnumerable<ComunaViewModel>
+@{ ViewData["Title"] = "Comunas"; }
+<div class="d-flex justify-content-between align-items-center mb-3"><h2>Comunas</h2><a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">Volver a regiones</a></div>
+<table class="table table-striped table-hover"><thead><tr><th>Comuna</th><th class="text-end">Superficie (km²)</th><th class="text-end">Población</th><th class="text-end">Densidad</th><th></th></tr></thead><tbody>
+@foreach (var comuna in Model) { <tr><td>@comuna.ComunaNombre</td><td class="text-end">@comuna.Superficie.ToString("N2")</td><td class="text-end">@comuna.Poblacion.ToString("N0")</td><td class="text-end">@comuna.Densidad.ToString("N2")</td><td class="text-end"><a class="btn btn-sm btn-primary" asp-action="Editar" asp-route-idRegion="@comuna.IdRegion" asp-route-idComuna="@comuna.IdComuna">Editar</a></td></tr> }
+</tbody></table>

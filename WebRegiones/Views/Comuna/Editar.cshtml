@@ -1,0 +1,10 @@
+@model ComunaViewModel
+@{ ViewData["Title"] = "Editar comuna"; }
+<h2>Editar información de comuna</h2><form asp-action="Editar" method="post">
+<div asp-validation-summary="ModelOnly" class="text-danger"></div><input asp-for="IdComuna" type="hidden" /><input asp-for="IdRegion" type="hidden" />
+<div class="mb-3"><label asp-for="ComunaNombre" class="form-label">Nombre de la comuna</label><input asp-for="ComunaNombre" class="form-control" /><span asp-validation-for="ComunaNombre" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Superficie" class="form-label">Superficie (km²)</label><input asp-for="Superficie" class="form-control" type="number" step="0.01" min="0.01" /><span asp-validation-for="Superficie" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Poblacion" class="form-label">Población</label><input asp-for="Poblacion" class="form-control" type="number" min="0" /><span asp-validation-for="Poblacion" class="text-danger"></span></div>
+<p class="text-muted">La densidad se calcula automáticamente como población / superficie.</p><button type="submit" class="btn btn-primary">Guardar</button> <a asp-action="Index" asp-route-idRegion="@Model.IdRegion" class="btn btn-outline-secondary">Cancelar</a>
+</form>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

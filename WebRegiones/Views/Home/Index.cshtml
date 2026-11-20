@@ -1,0 +1,6 @@
+@model IEnumerable<RegionViewModel>
+@{ ViewData["Title"] = "Regiones"; }
+<h2>Regiones de Chile</h2><p class="text-muted">Seleccione una región para consultar y editar sus comunas.</p>
+<div class="list-group">
+@foreach (var region in Model) { <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" asp-controller="Comuna" asp-action="Index" asp-route-idRegion="@region.IdRegion"><span>@region.RegionNombre</span><span class="badge bg-primary rounded-pill">Ver comunas</span></a> }
+</div>
