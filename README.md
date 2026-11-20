@@ -1,9 +1,9 @@
 # Prueba Técnica - Regiones y Comunas de Chile
 
-Solución .NET 9 compuesta por tres proyectos: `AccesoDatos`, `ApiRegiones` y `WebRegiones`.
+Solución .NET 9 compuesta por tres proyectos: `AccesoDatos`, `ApiPvtRegiones` y `WebRegiones`.
 
 ## Requisitos
-- Visual Studio 2022 actualizado o Visual Studio 2026.
+- Visual Studio 2022 actualizado.
 - .NET 9 SDK.
 - SQL Server 2012 o superior.
 
