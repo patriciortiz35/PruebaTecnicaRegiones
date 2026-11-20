@@ -9,16 +9,24 @@ Solución .NET 9 compuesta por tres proyectos: `AccesoDatos`, `ApiPvtRegiones` y
 
 ## Base de datos
 Ejecutar en SQL Server Management Studio, en este orden:
-1. `BaseDatos/01_CrearBaseDatos.sql`
-2. `BaseDatos/02_ProcedimientosAlmacenados.sql`
-3. `BaseDatos/03_CargaInicial.sql`
-4. `BaseDatos/04_UsuarioBaseDatos.sql`
+1. `Instalación/01_BaseDatos/01_CrearBaseDatos.sql`
+2. `Instalación/01_BaseDatos/02_ProcedimientosAlmacenados.sql`
+3. `Instalación/01_BaseDatos/03_CargaInicial.sql`
+4. `Instalación/01_BaseDatos/04_UsuarioBaseDatos.sql`
 Los nombres de los procedimientos cumplen con la nomenclatura "usp_PVT.." donde PVT es Prueba "ValueTech"
 
 La carga incluye las 16 regiones y comunas de demostración. Los datos son referenciales tal como se indicó el documento de requerimiento.
 
 ## Configuración
-Actualizar `ConnectionStrings:ConexionBD` en `ApiPvtRegiones/appsettings.json` con el servidor SQL correspondiente. Configurar una API Key propia en `Seguridad:ApiKey` y la misma clave en `WebRegiones/appsettings.json`, sección `ApiRegiones:ApiKey`. En producción, usar variables de entorno o un gestor de secretos; no almacenar claves reales en el repositorio.
+Actualizar `ConnectionStrings:ConexionBD` en `ApiPvtRegiones/appsettings.json` con el servidor SQL correspondiente. Configurar una API Key propia en `ApiKey:Key` y la misma clave en `WebRegiones/appsettings.json`, sección `ApiRegiones:ApiKey`. 
+En producción (un localhost por ejemplo o equipo similar), usar variables de entorno:
+
+1. Abrir powershell como administrador.
+2. Ejecutar `Instalación/02_Configuración/InstalaApikey.ps1` => puedes agregar la clave que desees o dejar vacío para que se cree una por defecto.
+3. Ejecutar `Instalación/02_Configuración/InstalaConnectionstrings.ps1` => tienes que agregar el servidor e instancia, el usuario y clave de base de datos ya vienen en el shell, y son los mismos que se encuentran en el script sql `04_UsuarioBaseDatos.sql`
+4. Reinicia WAS/IIS con powershell acá te dejo los comandos
+Para el servicio WAS=> Restart-Service WAS -Force
+Para el IIS iisreset
 
 Configurar `ApiRegiones:Url` con la URL HTTPS real de la API. Los puertos de desarrollo dependen del perfil de ejecución de Visual Studio; ajustar esa URL según `ApiRegiones/Properties/launchSettings.json` (si se crea) o la consola de ejecución.
 
